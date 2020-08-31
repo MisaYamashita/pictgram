@@ -9,8 +9,6 @@ class User < ApplicationRecord
   VAILD_PASSWORD_REGEX =  /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i
   validates :password, presence: true,
                        format: {with: VAILD_PASSWORD_REGEX}
-  validates :password_confirmation, presence: true,
-                                    format: {with: VAILD_PASSWORD_REGEX}
   
   has_secure_password
 end
