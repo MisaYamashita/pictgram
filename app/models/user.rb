@@ -11,4 +11,6 @@ class User < ApplicationRecord
                        format: {with: VAILD_PASSWORD_REGEX}
   
   has_secure_password
+  
+  has_many :topics
 end
