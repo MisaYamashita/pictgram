@@ -135,5 +135,16 @@ h1, h2 {
       height: 30px;
       margin-left: 20px;
     }
+    
+    
+    .favorite-btn { 
+      filter: invert(14%) sepia(84%) saturate(7447%) hue-rotate(359deg) brightness(104%) contrast(108%);
+    }
+    
+    .unfavorite-btn {
+      filter: invert(0%) sepia(14%) saturate(7423%) hue-rotate(153deg) brightness(103%) contrast(96%);
+    } 
+    
+    
   }
 }
