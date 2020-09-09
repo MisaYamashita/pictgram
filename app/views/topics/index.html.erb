@@ -19,20 +19,24 @@
                 <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon favorite-btn' %>
               <% end %>
             <% end %>
-            <%= @favorite_count %>
-            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            <%= topic.favorite_users.count %>
+            
+            <%= link_to comments_new_path(topic_id: topic.id), remote: true do %>
+              <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            <% end %>
+            
             <p class="topic-text">
               <%= topic.description %>
             </p>
             <h4 class="comment-title">投稿コメント</h4>
+            
+            <div id=<%= "comment_new#{topic.id}" %>></div>
+            
             <% topic.comments.each do |comment| %>
               <p><%= comment.body %></p>
             <% end %>
             
-            <%= form_with model: [topic, topic.comments.new], local: true do |f| %>
-              <%= f.text_area :body, class: 'comment-area' %>
-              <%= f.submit 'Send', class: 'comment-btn' %>
-            <% end %>
+            
           </div>
         </div>
       </div>
